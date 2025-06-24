@@ -92,44 +92,44 @@ export default async function PostPage({ params }: PostPageProps) {
             rehypePlugins={[rehypeHighlight, rehypeRaw]}
             components={{
               // Custom heading styling
-              h1: ({ node, ...props }) => (
+              h1: ({ ...props }) => (
                 <h1 className="text-3xl md:text-4xl font-serif font-bold mb-6 mt-8 text-foreground" {...props} />
               ),
-              h2: ({ node, ...props }) => (
+              h2: ({ ...props }) => (
                 <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-4 mt-8 text-foreground" {...props} />
               ),
-              h3: ({ node, ...props }) => (
+              h3: ({ ...props }) => (
                 <h3 className="text-xl md:text-2xl font-serif font-semibold mb-3 mt-6 text-foreground" {...props} />
               ),
-              h4: ({ node, ...props }) => (
+              h4: ({ ...props }) => (
                 <h4 className="text-lg md:text-xl font-serif font-semibold mb-2 mt-4 text-foreground" {...props} />
               ),
-              h5: ({ node, ...props }) => (
+              h5: ({ ...props }) => (
                 <h5 className="text-base md:text-lg font-serif font-semibold mb-2 mt-4 text-foreground" {...props} />
               ),
-              h6: ({ node, ...props }) => (
+              h6: ({ ...props }) => (
                 <h6 className="text-sm md:text-base font-serif font-semibold mb-2 mt-4 text-foreground" {...props} />
               ),
               // Custom paragraph styling
-              p: ({ node, ...props }) => (
+              p: ({ ...props }) => (
                 <div className="font-serif text-base md:text-lg leading-relaxed mb-6 text-foreground" {...props} />
               ),
               // Custom list styling
-              ul: ({ node, ...props }) => (
+              ul: ({ ...props }) => (
                 <ul className="font-serif text-base md:text-lg leading-relaxed mb-6 ml-6 space-y-2" {...props} />
               ),
-              ol: ({ node, ...props }) => (
+              ol: ({ ...props }) => (
                 <ol className="font-serif text-base md:text-lg leading-relaxed mb-6 ml-6 space-y-2" {...props} />
               ),
-              li: ({ node, ...props }) => (
+              li: ({ ...props }) => (
                 <li className="font-serif" {...props} />
               ),
               // Custom blockquote styling
-              blockquote: ({ node, ...props }) => (
+              blockquote: ({ ...props }) => (
                 <blockquote className="border-l-4 border-primary pl-6 py-2 my-6 italic font-serif text-base md:text-lg bg-secondary/30 rounded-r-lg" {...props} />
               ),
               // Custom image handling
-              img: ({ node, ...props }) => (
+              img: ({ ...props }) => (
                 <div className="relative w-full my-8">
                   <Image
                     src={props.src || ''}
@@ -142,7 +142,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 </div>
               ),
               // Custom link handling
-              a: ({ node, ...props }) => (
+              a: ({ ...props }) => (
                 <Link
                   href={props.href || '#'}
                   className="text-primary hover:underline font-serif decoration-2 underline-offset-2"
@@ -153,11 +153,11 @@ export default async function PostPage({ params }: PostPageProps) {
                 </Link>
               ),
               // Custom code block styling
-              pre: ({ node, ...props }) => (
+              pre: ({ ...props }) => (
                 <pre className="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto my-6 border border-border" {...props} />
               ),
               // Custom inline code styling
-              code: ({ node, className, ...props }) => {
+              code: ({ className, ...props }) => {
                 const match = /language-(\w+)/.exec(className || '')
                 return match ? (
                   <code className={className} {...props} />
@@ -166,19 +166,19 @@ export default async function PostPage({ params }: PostPageProps) {
                 )
               },
               // Custom table styling
-              table: ({ node, ...props }) => (
+              table: ({ ...props }) => (
                 <div className="my-6 overflow-x-auto">
                   <table className="min-w-full border-collapse border border-border rounded-lg" {...props} />
                 </div>
               ),
-              th: ({ node, ...props }) => (
+              th: ({ ...props }) => (
                 <th className="border border-border px-4 py-2 bg-secondary font-serif font-semibold text-left" {...props} />
               ),
-              td: ({ node, ...props }) => (
+              td: ({ ...props }) => (
                 <td className="border border-border px-4 py-2 font-serif" {...props} />
               ),
               // Custom horizontal rule
-              hr: ({ node, ...props }) => (
+              hr: ({ ...props }) => (
                 <hr className="my-8 border-border" {...props} />
               )
             }}

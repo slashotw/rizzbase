@@ -12,7 +12,7 @@ export default function NotFound() {
         <div className="text-center">
           <h1 className="text-4xl font-serif mb-4">Post Not Found</h1>
           <p className="text-muted-foreground mb-8 font-serif">
-            The post you're looking for doesn't exist or has been moved.
+            The post you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
           <Link 
             href="/posts" 
