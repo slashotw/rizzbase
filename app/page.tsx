@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Github } from "lucide-react";
 import { PostsManager } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
 
@@ -25,10 +24,17 @@ export default async function Home() {
               <p className="text-lg font-serif md:text-xl text-muted-foreground mb-4 md:mb-6">
                 Documenting blog using <strong>Notion</strong> as CMS.
               </p>
-                            <Button variant="outline" className="font-serif">
-                <Github className="w-4 h-4 mr-2" />
-                <Link href="https://github.com" target="_blank">Deploy your own</Link>
-              </Button>
+                            <div className="flex gap-4">
+                <Button asChild className="font-serif">
+                  <Link href="/posts/get-started-en">
+                    <ArrowRight className="w-4 h-4 mr-2" />
+                    Get Started
+                  </Link>
+                </Button>
+                <Button variant="outline" className="font-serif">
+                  <Link href="/posts/intro">What is this?</Link>
+                </Button>
+              </div>
             </div>
             <div className="flex justify-center md:justify-end -mt-8 md:mt-0">
               <Image className="rounded-full" src="/images/Buroguru.png" alt="Owen Wu" width={500} height={500} />
