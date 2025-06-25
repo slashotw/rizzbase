@@ -13,9 +13,9 @@ A modern blog framework that transforms your Notion workspace into a beautiful b
 
 ## 🚀 Quick Start
 
-**English Tutorial**: [Get Started Guide](https://buroguru.zudo.cc/get-started-en)
+**English Tutorial**: [Get Started Guide](https://buroguru.zudo.cc/posts/get-started-en)
 
-**中文教學**: [開始使用指南](https://buroguru.zudo.cc/get-started-zh)
+**中文教學**: [開始使用指南](https://buroguru.zudo.cc/posts/get-started-zh)
 
 ## 🛠️ Tech Stack
 
