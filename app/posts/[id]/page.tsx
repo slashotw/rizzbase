@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer'
 import { ProfileCard } from '@/components/ProfileCard'
 import { formatDate } from '@/lib/utils'
 import { ArrowLeft } from 'lucide-react'
+import { blog } from '@/lib/config'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight'
@@ -60,17 +61,19 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
           )}
           
-          <div className="flex flex-wrap gap-2 mb-4">
-            {post.tags.map((tag) => (
-              <Link
-                key={tag}
-                href={`/posts?tag=${encodeURIComponent(tag)}`}
-                className="px-3 py-1 text-xs font-serif bg-secondary hover:bg-secondary/80 rounded-full transition-colors"
-              >
-                {tag}
-              </Link>
-            ))}
-          </div>
+          {blog.showTags && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {post.tags.map((tag) => (
+                <Link
+                  key={tag}
+                  href={`/posts?tag=${encodeURIComponent(tag)}`}
+                  className="px-3 py-1 text-xs font-serif bg-secondary hover:bg-secondary/80 rounded-full transition-colors"
+                >
+                  {tag}
+                </Link>
+              ))}
+            </div>
+          )}
           
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif mb-4 leading-tight">
             {post.title}

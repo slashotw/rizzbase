@@ -5,8 +5,7 @@ import { Navbar } from '@/components/Navbar'
 import { formatDate } from '@/lib/utils'
 import { ProfileCard } from '@/components/ProfileCard'
 import { Footer } from '@/components/Footer'
-
-const POSTS_PER_PAGE = 10
+import { getPostsPerPage, blog } from '@/lib/config'
 
 export default async function PostsPage({
   searchParams
@@ -33,9 +32,10 @@ export default async function PostsPage({
     })
   }
 
-  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE)
-  const offset = (currentPage - 1) * POSTS_PER_PAGE
-  const posts = allPosts.slice(offset, offset + POSTS_PER_PAGE)
+  const postsPerPage = getPostsPerPage()
+  const totalPages = Math.ceil(allPosts.length / postsPerPage)
+  const offset = (currentPage - 1) * postsPerPage
+  const posts = allPosts.slice(offset, offset + postsPerPage)
 
   return (
     <div>
@@ -131,22 +131,26 @@ export default async function PostsPage({
                       </div>
                     )}
                     <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap gap-2 mb-2">
-                        {post.tags.map((tag) => (
-                          <span 
-                            key={tag}
-                            className="text-xs text-muted-foreground font-serif"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                      {blog.showTags && (
+                        <div className="flex flex-wrap gap-2 mb-2">
+                          {post.tags.map((tag) => (
+                            <span 
+                              key={tag}
+                              className="text-xs text-muted-foreground font-serif"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                       <h3 className="text-lg font-serif mb-2 group-hover:text-primary transition-colors line-clamp-1">
                         {post.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground font-serif mb-2 line-clamp-2">
-                        {post.description}
-                      </p>
+                      {blog.showExcerpt && (
+                        <p className="text-sm text-muted-foreground font-serif mb-2 line-clamp-2">
+                          {post.description}
+                        </p>
+                      )}
                       <time className="text-xs text-muted-foreground font-serif">
                         {formatDate(post.date)}
                       </time>

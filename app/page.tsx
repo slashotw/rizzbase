@@ -6,10 +6,11 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PostsManager } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
+import { homepage, author, appearance } from "@/lib/config";
 
 export default async function Home() {
   // Get recent posts
-  const recentPosts = PostsManager.getAllPosts().slice(0, 3);
+  const recentPosts = PostsManager.getAllPosts().slice(0, homepage.recentPosts.count);
 
   return (
     <div>
@@ -19,25 +20,31 @@ export default async function Home() {
           <div className="flex flex-col-reverse md:flex-row items-center md:justify-between gap-12 md:gap-16">
             <div className="text-center md:text-left max-w-xl">
               <h1 className="text-4xl font-serif md:text-6xl mb-4 md:mb-6">
-                Buroguru
+                {homepage.hero.title}
               </h1>
               <p className="text-lg font-serif md:text-xl text-muted-foreground mb-4 md:mb-6">
-                Documenting blog using <strong>Notion</strong> as CMS.
+                {homepage.hero.description}
               </p>
-                            <div className="flex gap-4">
+              <div className="flex gap-4">
                 <Button asChild className="font-serif">
-                  <Link href="/posts/get-started-en">
+                  <Link href={homepage.hero.primaryButton.href}>
                     <ArrowRight className="w-4 h-4 mr-2" />
-                    Get Started
+                    {homepage.hero.primaryButton.text}
                   </Link>
                 </Button>
                 <Button variant="outline" className="font-serif">
-                  <Link href="/posts/intro">What is this?</Link>
+                  <Link href={homepage.hero.secondaryButton.href}>{homepage.hero.secondaryButton.text}</Link>
                 </Button>
               </div>
             </div>
             <div className="flex justify-center md:justify-end -mt-8 md:mt-0">
-              <Image className="rounded-full" src="/images/Buroguru.png" alt="Owen Wu" width={500} height={500} />
+              <Image 
+                className="rounded-full" 
+                src={appearance.logo || author.avatar} 
+                alt={author.name} 
+                width={500} 
+                height={500} 
+              />
             </div>
           </div>
         </div>
@@ -53,12 +60,12 @@ export default async function Home() {
       {/* Articles Section */}
       <section className="max-w-6xl mx-4 md:mx-auto px-4 py-16">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-serif">Recent Posts</h2>
+          <h2 className="text-2xl font-serif">{homepage.recentPosts.title}</h2>
           <Link 
             href="/posts" 
             className="text-sm text-muted-foreground hover:text-primary transition-colors font-serif"
           >
-            View all posts
+            {homepage.recentPosts.viewAllText}
           </Link>
         </div>
 

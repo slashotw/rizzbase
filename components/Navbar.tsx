@@ -5,6 +5,7 @@ import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { site, author, appearance } from '@/lib/config'
 
 export function Navbar() {
   const { theme, setTheme } = useTheme()
@@ -14,8 +15,14 @@ export function Navbar() {
       <div className="max-w-6xl mx-4 md:mx-auto px-4 h-16 flex items-center justify-between">
         
         <Link href="/?skip=true" className="text-2xl flex gap-4 font-serif hover:text-primary transition-colors">
-          <Image src="/images/Buroguru.png" className="rounded-full" alt="Buroguru" width={30} height={30} />
-          Buroguru
+          <Image 
+            src={appearance.logo || author.avatar} 
+            className="rounded-full" 
+            alt={site.name} 
+            width={30} 
+            height={30} 
+          />
+          {site.name}
         </Link>
         
         <div className="flex items-center gap-4">
