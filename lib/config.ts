@@ -31,7 +31,7 @@ export const { site, author, appearance, blog, homepage, footer } = siteConfig
 
 export function getSocialLinks() {
   return Object.entries(author.social)
-    .filter(([_, url]) => url)
+    .filter(([, url]) => url)
     .map(([platform, url]) => ({ platform, url: url! }))
 }
 
