@@ -37,7 +37,7 @@ Join the lightweight blogging movement in just three steps:
 * 調整設定檔來客製化你的部落格外觀
   Customize your blog through the config file
 
-📚 詳細教學請看：[快速開始 Quick Start](https://buroguru.zudo.cc/posts/quick-start-en)
+📚 詳細教學請看：[快速開始 Quick Start](https://buroguru.zudo.cc/posts/get-started-en)
 
 ---
 
