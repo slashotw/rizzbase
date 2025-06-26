@@ -1,43 +1,52 @@
 ---
 title: "Buroguru Configuration Guide: Customize Your Blog"
 description: "Complete guide to Buroguru configuration, learn how to easily customize your blog's appearance, features, and content settings."
-date: "2024-12-19"
-tags: ["tutorial", "configuration", "customization"]
-thumbnail: ""
+thumbnail: "/images/posts/c10e18cd-a9a0-4204-81c3-1feea61c5159.png"
+date: "2025-06-26"
+tags: ["tutorial"]
 ---
+
+![image.png](/images/posts/b20cd336-2b7b-4bc6-bfed-43832b809b61.png)
+
 
 # Buroguru Configuration Guide: Customize Your Blog
 
+
 Buroguru provides a powerful and flexible configuration system that allows you to easily customize every aspect of your blog. All configurations are centralized in the `buroguru-config.ts` file, making management simple and intuitive.
 
+
 ## Configuration File Structure
+
 
 The configuration file is divided into several main sections:
 
 - **Site Settings**
-- **Author Settings**  
+- **Author Settings**
 - **Appearance**
 - **Blog Settings**
-- **Navigation**
 - **Homepage**
 - **Footer**
 
 ## Basic Site Settings
 
+
 ```typescript
 site: {
   name: "Your Blog Name",
   description: "Blog description",
-  url: "https://yourblog.com"
+  url: "<https://yourblog.com>"
 }
 ```
 
+
 These settings affect:
+
 - Browser title and SEO
 - Site name in navigation bar
 - Information when sharing on social media
 
 ## Author Information Configuration
+
 
 ```typescript
 author: {
@@ -46,23 +55,28 @@ author: {
   avatar: "/images/avatar.png",
   email: "your@email.com",
   social: {
-    github: "https://github.com/username",
-    twitter: "https://twitter.com/username",
-    linkedin: "https://linkedin.com/in/username",
-    notion: "https://notion.so/username",
-    website: "https://yourwebsite.com"
+    github: "<https://github.com/username>",
+    twitter: "<https://twitter.com/username>",
+    linkedin: "<https://linkedin.com/in/username>",
+    notion: "<https://notion.so/username>",
+    website: "<https://yourwebsite.com>"
   }
 }
+
 ```
 
+
 Author information is displayed in:
+
 - Article detail pages
 - Profile card
 - Footer area
 
 ## Appearance Customization
 
+
 ### Font Settings
+
 
 ```typescript
 appearance: {
@@ -76,6 +90,7 @@ appearance: {
 
 ### Color Theme
 
+
 ```typescript
 appearance: {
   primaryColor: '222.2 84% 4.9%', // HSL format
@@ -83,9 +98,12 @@ appearance: {
 }
 ```
 
+
 Color values use HSL format (hue saturation lightness), automatically adapting to dark and light modes.
 
+
 ### Logo Settings
+
 
 ```typescript
 appearance: {
@@ -93,9 +111,12 @@ appearance: {
 }
 ```
 
+
 If a logo is set, it will be used preferentially in the navigation bar and homepage, otherwise the author avatar will be used.
 
+
 ## Blog Feature Settings
+
 
 ```typescript
 blog: {
@@ -106,29 +127,18 @@ blog: {
 }
 ```
 
+
 These settings control:
+
 - How article lists are displayed
 - Pagination behavior
 - Display of tags and excerpts
 
-## Navigation Menu
-
-```typescript
-navigation: {
-  links: [
-    { name: "Home", href: "/" },
-    { name: "Posts", href: "/posts" },
-    { name: "About", href: "/about" },
-    { name: "External Link", href: "https://external.com", external: true }
-  ]
-}
-```
-
-- `external: true` indicates external links, will open in new tab
-
 ## Homepage Customization
 
+
 ### Hero Section Settings
+
 
 ```typescript
 homepage: {
@@ -147,7 +157,9 @@ homepage: {
 }
 ```
 
+
 ### Recent Posts Section
+
 
 ```typescript
 homepage: {
@@ -159,7 +171,9 @@ homepage: {
 }
 ```
 
+
 ## Footer Settings
+
 
 ```typescript
 footer: {
@@ -172,40 +186,42 @@ footer: {
 }
 ```
 
+
 ## Complete Configuration Example
+
 
 ```typescript
 const config: BuroguruConfig = {
   site: {
     name: "My Tech Blog",
     description: "Sharing programming and technology insights",
-    url: "https://myblog.com"
+    url: "<https://myblog.com>"
   },
-  
+
   author: {
     name: "John Doe",
     bio: "Full-stack developer passionate about sharing technical knowledge",
     avatar: "/images/avatar.jpg",
     email: "contact@myblog.com",
     social: {
-      github: "https://github.com/username",
-      twitter: "https://twitter.com/username"
+      github: "<https://github.com/username>",
+      twitter: "<https://twitter.com/username>"
     }
   },
-  
+
   appearance: {
     fontFamily: 'sans',
     customFont: 'Inter',
     primaryColor: '200 100% 50%',
     logo: '/images/logo.png'
   },
-  
+
   blog: {
     postsPerPage: 8,
     showExcerpt: true,
     showTags: true
   },
-  
+
   navigation: {
     links: [
       { name: "Home", href: "/" },
@@ -213,7 +229,7 @@ const config: BuroguruConfig = {
       { name: "About Me", href: "/about" }
     ]
   },
-  
+
   homepage: {
     hero: {
       title: "Welcome to My Tech Blog",
@@ -233,7 +249,7 @@ const config: BuroguruConfig = {
       count: 4
     }
   },
-  
+
   footer: {
     text: "John Doe's Tech Blog",
     showBuiltWith: true
@@ -241,82 +257,32 @@ const config: BuroguruConfig = {
 }
 ```
 
-## Advanced Tips
-
-### Conditional Configuration
-
-You can dynamically adjust configuration based on environment variables or other conditions:
-
-```typescript
-const isDev = process.env.NODE_ENV === 'development'
-
-const config: BuroguruConfig = {
-  site: {
-    name: "My Blog",
-    url: isDev ? "http://localhost:3000" : "https://myblog.com"
-  },
-  // ... other configurations
-}
-```
-
-### Configuration Validation
-
-It's recommended to add type checking at the top of the configuration file:
-
-```typescript
-import { BuroguruConfig } from './lib/config'
-
-// Ensure configuration conforms to type definition
-const config: BuroguruConfig = {
-  // Your configuration
-}
-```
-
-## Common Issues
-
-### Q: Configuration changes not taking effect?
-A: Make sure to restart the development server, configuration changes require recompilation.
-
-### Q: Custom font not displaying?
-A: Check if the font name is correct and ensure network connection is available to load Google Fonts.
-
-### Q: Colors displaying abnormally in dark mode?
-A: Make sure to use HSL format color values, the system will automatically adjust contrast for dark mode.
-
-### Q: How to use local fonts?
-A: Place font files in the `public/fonts/` directory, then declare them using `@font-face` in `globals.css`.
-
-## Next Steps
-
-After completing configuration, you can:
-1. Test various setting combinations
-2. Check responsive design
-3. Verify SEO settings
-4. Deploy to production environment
-
-Feel free to check the documentation or contact support if you have any questions!
 
 ## Configuration Reference
 
+
 ### Site Settings
+
 - `name`: Site name (string)
 - `description`: Site description for SEO (string)
 - `url`: Site URL (string)
 - `favicon`: Custom favicon path (optional string)
 
 ### Author Settings
+
 - `name`: Author name (string)
 - `bio`: Author biography (string)
 - `avatar`: Author avatar image path (string)
 - `email`: Contact email (optional string)
 - `social`: Social media links (object)
-  - `github`: GitHub profile URL
-  - `twitter`: Twitter profile URL
-  - `linkedin`: LinkedIn profile URL
-  - `notion`: Notion profile URL
-  - `website`: Personal website URL
+	- `github`: GitHub profile URL
+	- `twitter`: Twitter profile URL
+	- `linkedin`: LinkedIn profile URL
+	- `notion`: Notion profile URL
+	- `website`: Personal website URL
 
 ### Appearance Settings
+
 - `fontFamily`: Base font family ('serif' | 'sans' | 'mono')
 - `customFont`: Google Fonts name (optional string)
 - `primaryColor`: Primary color in HSL format (string)
@@ -324,29 +290,33 @@ Feel free to check the documentation or contact support if you have any question
 - `logo`: Logo image path (optional string)
 
 ### Blog Settings
+
 - `postsPerPage`: Number of posts per page (number)
 - `showExcerpt`: Whether to show post excerpts (boolean)
 - `showTags`: Whether to show post tags (boolean)
 - `defaultThumbnail`: Default post thumbnail (optional string)
 
 ### Navigation Settings
+
 - `links`: Array of navigation links
-  - `name`: Link display name (string)
-  - `href`: Link URL (string)
-  - `external`: Whether it's an external link (optional boolean)
+	- `name`: Link display name (string)
+	- `href`: Link URL (string)
+	- `external`: Whether it's an external link (optional boolean)
 
 ### Homepage Settings
+
 - `hero`: Hero section configuration
-  - `title`: Main headline (string)
-  - `description`: Description text (string)
-  - `primaryButton`: Primary CTA button
-  - `secondaryButton`: Secondary CTA button
+	- `title`: Main headline (string)
+	- `description`: Description text (string)
+	- `primaryButton`: Primary CTA button
+	- `secondaryButton`: Secondary CTA button
 - `recentPosts`: Recent posts section
-  - `title`: Section title (string)
-  - `viewAllText`: "View all" link text (string)
-  - `count`: Number of posts to show (number)
+	- `title`: Section title (string)
+	- `viewAllText`: "View all" link text (string)
+	- `count`: Number of posts to show (number)
 
 ### Footer Settings
+
 - `text`: Footer text (optional string)
 - `showBuiltWith`: Show "Built with Buroguru" link (boolean)
-- `links`: Additional footer links (optional array) 
+- `links`: Additional footer links (optional array)
