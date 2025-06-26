@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/51200b19-ec44-4f08-82f0-7879d095ae0c)
+
+
 # Welcome to **Buroguru** – 用 Notion 創作部落格！
 
 Buroguru lets you blog directly from Notion — clean, simple, and minimal.
