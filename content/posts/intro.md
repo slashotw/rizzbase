@@ -1,7 +1,7 @@
 ---
 title: "What is Buroguru?"
 description: "Introduction of Buroguru - a blog framework that use Notion as CMS"
-thumbnail: "/images/posts/6664fef7-8900-4f59-b7ce-3597fb89f997.png"
+thumbnail: "/images/posts/551b74f2-e2d2-44f9-a82d-126d0baa4f9b.png"
 date: "2025-06-23"
 tags: ["intro"]
 ---
@@ -66,7 +66,7 @@ Join the lightweight blogging movement in just three steps:
 	Customize your blog through the config file
 
 
-📚 詳細教學請看：[快速開始 Quick Start](https://buroguru.zudo.cc/posts/quick-start-en)
+📚 詳細教學請看：[快速開始 Quick Start](https://buroguru.zudo.cc/posts/get-started-en)
 
 
 ---
