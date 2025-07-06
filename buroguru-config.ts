@@ -90,14 +90,14 @@ export interface BuroguruConfig {
 // Default configuration
 export const defaultConfig: BuroguruConfig = {
   site: {
-    name: "Buroguru",
-    description: "A modern blog framework that transforms your Notion workspace into a beautiful blog",
-    url: "https://buroguru.zudo.cc"
+    name: "Rizzbase",
+    description: "A database for Rizz",
+    url: "https://rizzbase.vercel.app"
   },
   
   author: {
-    name: "Your Name",
-    bio: "Welcome to my blog! I write about technology, life, and everything in between.",
+    name: "slasho",
+    bio: "welcome to my rizzbase...",
     avatar: "/images/avatar.png",
     social: {
       github: "https://github.com/yourusername",
@@ -108,7 +108,7 @@ export const defaultConfig: BuroguruConfig = {
   appearance: {
     fontFamily: 'serif',
     primaryColor: '222.2 84% 4.9%', // Default shadcn primary
-    logo: "/images/logo.png"
+    logo: "/images/image.png"
   },
   
   blog: {
@@ -146,20 +146,18 @@ export const defaultConfig: BuroguruConfig = {
 // User's custom configuration
 const config: BuroguruConfig = {
   site: {
-    name: "Buroguru",
-    description: "A modern blog framework that transforms your Notion workspace into a beautiful blog",
-    url: "https://buroguru.zudo.cc"
+    name: "Rizzbase",
+    description: "A database for Rizz",
+    url: "https://rizzbase.vercel.app"
   },
   
   author: {
-    name: "Owen Wu",
-    bio: "Buroguru is a modern blog framework that seamlessly transforms your Notion workspace into a beautiful, fast-loading blog. Write in Notion, publish everywhere.",
-    avatar: "/images/Buroguru.png",
-    email: "wusandwitch@gmail.com",
+    name: "slasho",
+    bio: "下頭土味情話大師",
+    avatar: "/images/image.png",
+    email: "",
     social: {
-      github: "https://github.com/WuSandWitch/Buroguru",
-      notion: "https://buroguru.notion.site",
-      website: "https://WuSandWitch.zudo.cc"
+      github: "https://github.com/slashotw"
     }
   },
   
@@ -167,7 +165,7 @@ const config: BuroguruConfig = {
     fontFamily: 'serif',
     primaryColor: '222.2 84% 4.9%',
     secondaryColor: '210 40% 96%',
-    logo: '/images/Buroguru.png'
+    logo: '/images/image.png'
   },
   
   blog: {
@@ -178,14 +176,14 @@ const config: BuroguruConfig = {
   
   homepage: {
     hero: {
-      title: "Buroguru",
-      description: "Documenting blog using Notion as CMS.",
+      title: "Rizzbase",
+      description: "一款超下頭正體中文的土味情話資料庫。",
       primaryButton: {
         text: "Get Started",
         href: "/posts/get-started-en"
       },
       secondaryButton: {
-        text: "What is Buroguru?",
+        text: "啥是Rizzbase✋😭🤚",
         href: "/posts/intro"
       }
     },
@@ -197,10 +195,10 @@ const config: BuroguruConfig = {
   },
   
   footer: {
-    text: "WuSandWitch",
+    text: "slasho",
     showBuiltWith: true,
     links: [
-      { name: "WuSandWitch", href: "https://WuSandWitch.zudo.cc" }
+      { name: "slasho", href: "https://github.com/slashotw" }
     ]
   }
 }
