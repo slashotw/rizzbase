@@ -1,7 +1,7 @@
 ---
 title: "Rizzbase 是一款正體中文的超下頭土味情話資料庫"
 description: "The introduction post of your blog"
-thumbnail: "/images/posts/6944e130-bc19-4991-9e0f-7faf8d226e51.jpeg"
+thumbnail: "/images/posts/bf81f28a-0a3e-46fa-aabc-cc3002f571b2.jpeg"
 date: "2025-06-19"
 tags: []
 ---
